@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Shit</title>
 </head>
 <body>
+    <h3 align="center">Привет, путник</h3>
+    <br>
 <h1 align="center">Are u ready to get to know which distro is the best?
 </h1>
 <br/>
