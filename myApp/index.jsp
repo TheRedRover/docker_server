@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,13 +83,13 @@
         </div>
         <div class="line">
         <div style="text-align: center">
-         <a align="center" href="best">SHOW</a>
+            <h1>Здравствуйте!</h1>
+        </br>
+        <p> Как считаете, самое время узнать, какой дистрибутив GNU/Linux наилучший?</p>
+        </br>
+        </br>
+         <a align="center" href="best">ПОКАЗАТЬ ЛУЧШИЙ ДИСТРИБУТИВ!</a>
         </div>
-        </form>
-       <!--  <div class="link-box">
-            <div class="imagine-box"> -->
-            <!-- </div>
-        </div>-->
       </div>
       </div>
       <script>
