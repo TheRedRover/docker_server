@@ -11,7 +11,6 @@ COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
 RUN ["javac", "-cp", ".:/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/webapps/myApp/WEB-INF/classes/", "/usr/local/webapps/myApp/src/DisplayImage.java"]
 
-
 EXPOSE 8080
 
 CMD ["catalina.sh", "run"]
