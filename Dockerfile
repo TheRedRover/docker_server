@@ -21,6 +21,8 @@ RUN ["javac", "-cp", ".:/opt/tomcat/lib/servlet-api.jar", "-d", "/opt/tomcat/web
 
 CMD ["cp","-r","opt/tomcat/webapps.dist/*","opt/tomcat/webapps/"]
 
+WORKDIR /opt/tomcat/webapps
+
 EXPOSE 8080
 
 CMD ["startup.sh"]
