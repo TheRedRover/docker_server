@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_fc842e7df96d461f81758a1b96980166 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_a81b510e99ea4020b4063c734098a2b9 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_6ea05b9662404bc68f9e51475d320c33 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_44d30e2490274928aec5b17448bfa6df }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ${{ secrets.AzureAppService_ContainerUsername_fc842e7df96d461f81758a1b96980166 }}/archtom:${{ github.sha }}
+        tags: ${{ secrets.AzureAppService_ContainerUsername_6ea05b9662404bc68f9e51475d320c33 }}/archtom:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'arch-tom'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_99d5488f23ba4ab5a60461055857b6a1 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_fc842e7df96d461f81758a1b96980166 }}/archtom:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_08e3a7336280444391c479848980bf74 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6ea05b9662404bc68f9e51475d320c33 }}/archtom:${{ github.sha }}'
