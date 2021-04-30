@@ -1,4 +1,4 @@
-FROM tomcat:jdk8-openjdk
+FROM tomcat
 
 COPY . /usr/local/tomcat/webapps/
 
