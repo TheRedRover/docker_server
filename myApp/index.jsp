@@ -83,12 +83,12 @@
         </div>
         <div class="line">
         <div style="text-align: center">
-            <h1>Здравствуйте!</h1>
+            <h1>Heloo!</h1>
         </br>
-        <p> Как считаете, самое время узнать, какой дистрибутив GNU/Linux наилучший?</p>
+        <p>Is it time to get to know which GNU/Linux distro is the BEST?</p>
         </br>
         </br>
-         <a align="center" href="best">ПОКАЗАТЬ ЛУЧШИЙ ДИСТРИБУТИВ!</a>
+         <a align="center" href="best">PRESS TO SHOW</a>
         </div>
       </div>
       </div>
