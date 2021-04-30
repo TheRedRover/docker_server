@@ -10,9 +10,9 @@ RUN mv apache-tomcat* /opt/tomcat/.
 
 RUN cd apache-tomcat*/conf
 
-RUN username=$tomcat_server_login
+RUN username=${{ARCH_TOM_LOGIN}}
 
-RUN userpassword=$tomcat_server_password
+RUN userpassword=${{ARCH_TOM_PASSWORD}}
 
 RUN sed -i "/version=\"1.0\">/a \<role rolename=\"manager-gui\"\/\>\n<role rolename=\"admin-gui\"\/\>\n<role rolename=\"manager-script\"\/\
 >\n\<user username=\"$username\" password=\"$userpassword\" roles=\"manager-gui,manager-script,admin-gui\"\/\>" "tomcat-users.xml"
