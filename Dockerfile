@@ -4,9 +4,9 @@ RUN mv webapps webapps2
 
 RUN ["mv","webapps.dist/","webapps"]
 
-# COPY . /usr/local/tomcat/webapps/
+COPY . webapps/
 
-#RUN ["javac", "-cp", ".:/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/tomcat/webapps/myApp/WEB-INF/classes/", "/usr/local/tomcat/webapps/myApp/src/DisplayImage.java"]
+RUN ["javac", "-cp", ".:/usr/local/tomcat/lib/servlet-api.jar", "-d", "webapps/myApp/WEB-INF/classes/", "webapps/myApp/src/DisplayImage.java"]
 
 
 EXPOSE 8080
