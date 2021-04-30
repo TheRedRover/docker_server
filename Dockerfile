@@ -1,26 +1,11 @@
-FROM archlinux
+FROM tomcat
 
-RUN mkdir /opt/tomcat
+COPY . /usr/local/tomcat/webapps/
 
-RUN pacman -Syu jdk-openjdk
-RUN wget "https://www2.apache.paket.ua/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz"
-RUN tar -zxvf apache-tomcat*
-RUN rm -r apache-tomcat*tar.gz*
-RUN mv apache-tomcat* /opt/tomcat/.
+RUN ["javac", "-cp", ".:/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/tomcat/webapps/myApp/WEB-INF/classes/", "/usr/local/tomcat/webapps/myApp/src/DisplayImage.java"]
 
-RUN cd apache-tomcat*/conf
-
-RUN username=${{ARCH_TOM_LOGIN}}
-
-RUN userpassword=${{ARCH_TOM_PASSWORD}}
-
-RUN sed -i "/version=\"1.0\">/a \<role rolename=\"manager-gui\"\/\>\n<role rolename=\"admin-gui\"\/\>\n<role rolename=\"manager-script\"\/\
->\n\<user username=\"$username\" password=\"$userpassword\" roles=\"manager-gui,manager-script,admin-gui\"\/\>" "tomcat-users.xml"
-
-RUN ["javac", "-cp", ".:/opt/tomcat/lib/servlet-api.jar", "-d", "/opt/tomcat/webapps/myApp/WEB-INF/classes/", "/opt/tomcat/webapps/myApp/src/DisplayImage.java"]
-
-CMD ["cp","-r","opt/tomcat/webapps.dist/*","opt/tomcat/webapps/"]
+CMD ["cp","usr/local/tomcat/webapps.dist/*","usr/local/tomcat/webapps/"]
 
 EXPOSE 8080
 
-CMD ["startup.sh"]
+CMD ["catalina.sh", "run"]
