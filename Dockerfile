@@ -2,7 +2,8 @@ FROM archlinux
 
 RUN mkdir /opt/tomcat
 
-RUN pacman -Syu jdk-openjdk
+RUN pacman -Syu
+RUN ["pacman", "-S", "jdk-openjdk"]
 RUN wget "https://www2.apache.paket.ua/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz"
 RUN tar -zxvf apache-tomcat*
 RUN rm -r apache-tomcat*tar.gz*
