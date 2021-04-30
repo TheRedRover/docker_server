@@ -83,7 +83,7 @@
         </div>
         <div class="line">
         <div style="text-align: center">
-            <h1>Helo!</h1>
+            <h1>Hello!</h1>
         </br>
         <p>Is it time to get to know which GNU/Linux distro is the BEST?</p>
         </br>
