@@ -1,10 +1,10 @@
 FROM tomcat
 
-COPY . /tomcat/webapps/
+COPY . /usr/local/tomcat/webapps/
 
-RUN ["javac", "-cp", ".:/tomcat/lib/servlet-api.jar", "-d", "/tomcat/webapps/myApp/WEB-INF/classes/", "/tomcat/webapps/myApp/src/DisplayImage.java"]
+RUN ["javac", "-cp", ".:/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/tomcat/webapps/myApp/WEB-INF/classes/", "/usr/local/tomcat/webapps/myApp/src/DisplayImage.java"]
 
-CMD ["cp","/tomcat/webapps.dist/*","/tomcat/webapps/"]
+CMD ["cp","usr/local/tomcat/webapps.dist/*","usr/local/tomcat/webapps/"]
 
 EXPOSE 8080
 
