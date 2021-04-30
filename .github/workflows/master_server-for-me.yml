@@ -5,8 +5,7 @@ name: Build and deploy container app to Azure Web App - server-for-me
 
 on:
   schedule:
-  
-  - cron: '10 5 * * *'
+  - cron: '15 2 * * *'
   
   push:
     branches:
