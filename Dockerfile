@@ -1,14 +1,15 @@
 FROM tomcat
 
-RUN mv webapps webapps2
 
-RUN ["mv","webapps.dist/","webapps"]
-RUN sed -i "/version=\"1.0\">/a \<role rolename=\"manager-gui\"\/\>\n<role rolename=\"admin-gui\"\/\>\n<role rolename=\"manager-script\"\/\
->\n\<user username=\"theredrover\" password=\"password\" roles=\"manager-gui,manager-script,admin-gui\"\/\>" "tomcat-users.xml"
+RUN mv /usr/local/tomcat/webapps /usr/local/tomcat/webapps2 
+RUN mv /usr/local/tomcat/webapps.dist /usr/local/tomcat/webapps
 
-COPY . webapps/
+COPY myApp /usr/local/tomcat/webapps/
+COPY tomcat-users.xml /usr/local/tomcat/conf/
+COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
-RUN ["javac", "-cp", ".:lib/servlet-api.jar", "-d", "webapps/myApp/WEB-INF/classes/", "webapps/myApp/src/DisplayImage.java"]
+
+RUN ["javac", "-cp", ".:/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/webapps/myApp/WEB-INF/classes/", "/usr/local/webapps/myApp/src/DisplayImage.java"]
 
 
 EXPOSE 8080
